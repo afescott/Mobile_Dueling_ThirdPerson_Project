@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ProjectileThrow : MonoBehaviour
 {
     public float speed = 20f;
 
+    public Button fireButton;
 
     public EventHandler eventHandler;
 
@@ -50,7 +52,10 @@ public class ProjectileThrow : MonoBehaviour
     {
 
         eventHandler += testingOnSpacePressed;
+
+       //fireButton.onClick.AddListener()
     }
+
 
     private void testingOnSpacePressed(object sender, EventArgs e)
     {
@@ -58,18 +63,15 @@ public class ProjectileThrow : MonoBehaviour
 
         ii += 1;
 
-        
+        //fireButton.GetComponent<"Butt">
 
         var j = Instantiate(rb, firePoint.position, firePoint.rotation);
-
-
-        //rb.velocity.magnitude
 
         j.AddForce(firePoint.forward * (holdDownTime * 100) * (25));
 
         j.freezeRotation = true;
 
-        //GetComponent<Rigidbody>().velocity = Vector3.zero;
+     
 
 
         fireTime = Time.time;
@@ -110,7 +112,7 @@ public class ProjectileThrow : MonoBehaviour
            
         }
 
-
+        
             if (Input.GetMouseButtonUp(0))
             {
 

@@ -39,23 +39,25 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < Input.touchCount; i++)
-        {
-            Vector3 touchPosition = Camera.main.ScreenToWorldPoint(Input.touches[i].position);
+        //for (int i = 0; i < Input.touchCount; i++)
+        //{
+        //    Vector3 touchPosition = Camera.main.ScreenToWorldPoint(Input.touches[i].position);
 
-            var input = Input.touches[i];
-
-
-
-            float inputX = input.position.x / 1000;
-        float inputZ = input.position.y / 1000;
+        //    var input = Input.touches[i];
 
 
-        //float inputX = Input.GetAxis("Mouse X");
-        //    float inputZ = Input.GetAxis("Mouse Y");
 
-            if (inputX > 0 || inputZ > 0)
-            {
+            //float inputX = input.position.x / 1000;
+            //float inputZ = input.position.y / 1000;
+
+
+
+
+            float inputX = Input.GetAxis("Mouse X");
+            float inputZ = Input.GetAxis("Mouse Y");
+
+            //if (inputX > 0 || inputZ > 0)
+            //{
 
                 finalInputX = inputX;
                 finalInputZ = inputZ;
@@ -68,8 +70,8 @@ public class CameraFollow : MonoBehaviour
                 Quaternion localRotation = Quaternion.Euler(rotX, rotY, 0.0f);
                 transform.rotation = localRotation;
 
-            }
-        }
+            
+        
     }
 
     void LateUpdate()
