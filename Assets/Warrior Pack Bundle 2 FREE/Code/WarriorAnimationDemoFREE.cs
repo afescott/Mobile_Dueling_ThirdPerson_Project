@@ -9,9 +9,7 @@ public class WarriorAnimationDemoFREE : MonoBehaviour
 
     public Joystick joystick;
 
-  
-    public CinemachineFreeLook camera;
-
+	public CharacterController controller;
 
 	private int count = 0;
 
@@ -49,8 +47,7 @@ public class WarriorAnimationDemoFREE : MonoBehaviour
 	{
 
 
-
-        for (int i = 0; i < Input.touchCount; i++)
+		for (int i = 0; i < Input.touchCount; i++)
         {
 			Vector3 touchPosition = Camera.main.ScreenToWorldPoint(Input.touches[i].position);
 
@@ -83,8 +80,8 @@ public class WarriorAnimationDemoFREE : MonoBehaviour
                 animator.SetFloat("Input X", z1);
                 animator.SetFloat("Input Z", -(x1));
 
-                if (x1 != 0 || z1 != 0) // figure out what
-                {
+                //if (x1 != 0 || z1 != 0) // figure out what
+                //{
 
                     if (x1 > 0)
                     {
@@ -110,15 +107,15 @@ public class WarriorAnimationDemoFREE : MonoBehaviour
                     animator.SetBool("Moving", true);
                     count += 1;
 
-                }
-                else
-                {
+                //}
+                //else
+                //{
                     //character is not moving
                     animator.SetBool("Moving", false);
-                }
+                //}
 
 
-                inputVec = new Vector3(x, 0, z);
+                inputVec = new Vector3(x1, 0, z1);
 
 
 
